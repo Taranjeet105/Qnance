@@ -18,10 +18,26 @@ function AsksAndBids({symbol}){
             
             <div className='h-screen  mx-auto space-x-8 flex flex-wrap overflow-scroll justify-center text-white bg-black'>
             <div>
+            <div className="text-center text-xl mt-10 font-bold">Bids</div>
+            {
+                bids.map((bid,idx)=>{
+                return(
+                    <div className="flex space-x-3 text-blue-700 justify-between" key={idx}>
+                        <div className=' font-medium mb-2'>{bid[1]}</div>
+                        <div className=' font-medium mb-2'>{bid[0]}</div>
+                     </div>
+                     )
+                })
+            }
+
+            </div>
+
+            <div>
             <div className="text-center text-xl mt-10 font-bold">Asks</div>
             { asks.map((ask,idx)=>{
                 return(
                     <div className="flex space-x-3 text-red-700 justify-between" key={idx}>
+
                         <div className=' font-medium mb-2'>{ask[0]}</div>
                         <div className=' font-medium mb-2'>{ask[1]}</div>
                      </div>
@@ -29,19 +45,7 @@ function AsksAndBids({symbol}){
                 })
             }
             </div>
-            <div>
-            <div className="text-center text-xl mt-10 font-bold">Bids</div>
-            {
-                bids.map((bid,idx)=>{
-                return(
-                    <div className="flex space-x-3 text-blue-700 justify-between" key={idx}>
-                        <div className=' font-medium mb-2'>{bid[0]}</div>
-                        <div className=' font-medium mb-2'>{bid[1]}</div>
-                     </div>
-                     )
-                })
-            }
-            </div>
+
             </div>
         </>
     )
