@@ -19,12 +19,12 @@ function SymbolList({handleSymbol,selectedSymbol}){
     
     return(
         <>
-            
+            <div className='text-center text-5xl p-4 font-semibold'>Order Book</div>
             <div style={style} className={`${isDropDownActive&&"h-52"} pt-8  mx-auto border-white bg-black overflow-x-hidden  overflow-scroll`}>
             <div onClick={handleDropDown} className='mx-auto w-full mb-2 flex justify-center space-x-2 text-white text-center font-bold'><div>{selectedSymbol} </div><img src={`${downArrow}`}/></div>
             
             {isDropDownActive&&symbols.map(({symbol},idx)=>{
-                return <div className='mx-auto w-full mb-2 text-white text-center pr-3 opacity-75 hover:opacity-100' key={idx} onClick={()=>{handleSymbol(symbols[idx]); handleDropDown() }}>{symbol}</div>
+                return <div className='mx-auto w-full mb-2  text-white text-center pr-3 opacity-75 hover:opacity-100' key={idx} onClick={()=>{handleSymbol(symbols[idx]); handleDropDown() }}>{symbol}</div>
                 })}
             </div>
         </>
