@@ -16,9 +16,9 @@ function AsksAndBids({symbol}){
     return(
         <>
             
-            <div className='h-screen  mx-auto space-x-8 flex flex-wrap overflow-scroll justify-center text-white bg-black'>
-            <div>
-            <div className="text-center text-xl mt-10 font-bold">Bids</div>
+            <div className='h-screen  mx-auto md:space-x-2 flex flex-wrap overflow-scroll justify-center text-white bg-black'>
+            <div className="h-96 border rounded-xl px-8 pt-2">
+            <div className="text-center text-xl  font-bold">Bids</div>
             {
                 bids.map((bid,idx)=>{
                 return(
@@ -32,8 +32,8 @@ function AsksAndBids({symbol}){
 
             </div>
 
-            <div>
-            <div className="text-center text-xl mt-10 font-bold">Asks</div>
+            <div  className="h-96 border rounded-xl pt-2 px-8">
+            <div className="text-center text-xl  font-bold">Asks</div>
             { asks.map((ask,idx)=>{
                 return(
                     <div className="flex space-x-3 text-red-700 justify-between" key={idx}>
